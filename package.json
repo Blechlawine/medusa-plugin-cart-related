@@ -3,6 +3,10 @@
     "version": "1.0.0",
     "description": "A plugin that adds a route to get related products to the products currently in your medusa cart",
     "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "github:blechlawine/medusa-plugin-cart-related"
+    },
     "scripts": {
         "build": "babel src -d .",
         "prepare": "cross-env NODE_ENV=production npm run build",
