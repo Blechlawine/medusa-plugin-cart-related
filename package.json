@@ -1,6 +1,6 @@
 {
     "name": "medusa-plugin-cart-related",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "A plugin that adds a route to get related products to the products currently in your medusa cart",
     "main": "index.js",
     "repository": {
