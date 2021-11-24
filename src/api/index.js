@@ -14,7 +14,7 @@ export default (rootDirectory) => {
         credentials: true,
     };
 
-    app.options("/store/carts/:id/related", cors(corsOptions)); 
+    router.options("/store/carts/:id/related", cors(corsOptions)); 
 
     router.get("/store/carts/:id/related", async (req, res) => {
         const cartService = req.scope.resolve("cartService");
