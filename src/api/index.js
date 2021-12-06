@@ -5,13 +5,13 @@ import { getConfigFile } from "medusa-core-utils";
 
 const { Router } = express;
 
-export default ({_}, config) => {
+export default ({_}, configIn) => {
     const medusaConfig = getConfigFile(rootDirectory, "medusa-config").configModule.projectConfig;
     const router = Router();
 
     const config = {
         relatedAmount: 3,
-        ...config,
+        ...configIn,
     };
 
     const corsOptions = {
