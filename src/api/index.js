@@ -5,12 +5,17 @@ import { getConfigFile } from "medusa-core-utils";
 
 const { Router } = express;
 
-export default (rootDirectory) => {
-    const config = getConfigFile(rootDirectory, "medusa-config").configModule.projectConfig;
+export default ({_}, config) => {
+    const medusaConfig = getConfigFile(rootDirectory, "medusa-config").configModule.projectConfig;
     const router = Router();
 
+    const config = {
+        relatedAmount: 3,
+        ...config,
+    };
+
     const corsOptions = {
-        origin: config.store_cors.split(","),
+        origin: medusaConfig.store_cors.split(","),
         credentials: true,
     };
 
@@ -50,7 +55,7 @@ export default (rootDirectory) => {
                         "collection",
                         "type",
                     ],
-                    take: config.relatedAmount || 3,
+                    take: config.relatedAmount,
                 }
             );
             res.status(200).json(result);
